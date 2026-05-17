@@ -36,7 +36,6 @@
       padding: 24px;
     }
 
-    /* Header */
     .header {
       position: relative;
       z-index: 20;
@@ -55,7 +54,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Futuristic Sportec Style */
     .futuristic-title {
       font-family: 'Trebuchet MS', Arial, sans-serif;
       font-size: clamp(36px, 5.2vw, 82px);
@@ -81,7 +79,6 @@
       text-shadow: 0 4px 14px rgba(0, 0, 0, 0.9);
     }
 
-    /* Small waving black fabric flag */
     .flag-scene {
       position: relative;
       width: 310px;
@@ -346,7 +343,6 @@
       }
     }
 
-    /* Gallery outer area */
     .gallery-area {
       position: relative;
       z-index: 10;
@@ -372,7 +368,6 @@
       border: 3px solid #111111;
     }
 
-    /* 3 images x2 bigger */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 960px);
@@ -418,23 +413,6 @@
     .card:hover img {
       transform: scale(1.04);
       filter: brightness(1.08) contrast(1.08);
-    }
-
-    .label {
-      position: absolute;
-      left: 28px;
-      top: 28px;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.76);
-      color: #c8ff42;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 18px;
-      border: 1px solid rgba(200, 255, 66, 0.58);
-      backdrop-filter: blur(8px);
-      z-index: 3;
     }
 
     .caption {
@@ -494,12 +472,12 @@
       z-index: 10;
       text-align: center;
       margin-top: 16px;
-      padding: 22px 18px;
+      padding: 26px 18px;
       color: #ffffff;
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 22px;
+      font-weight: 900;
       letter-spacing: 1px;
-      opacity: 0.95;
+      opacity: 0.98;
       border-top: 1px solid rgba(200, 255, 66, 0.25);
     }
 
@@ -508,19 +486,22 @@
     }
 
     .copyright {
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.72);
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      margin-top: 16px;
+      font-size: 22px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .copyright strong {
       color: #c8ff42;
+      font-size: 24px;
     }
 
-    /* Responsive */
     @media (max-width: 1100px) {
       .header {
         flex-direction: column;
@@ -549,6 +530,14 @@
 
       .caption p {
         font-size: 18px;
+      }
+
+      .copyright {
+        font-size: 18px;
+      }
+
+      .copyright strong {
+        font-size: 20px;
       }
     }
 
@@ -582,13 +571,6 @@
         border-radius: 22px;
       }
 
-      .label {
-        left: 14px;
-        top: 14px;
-        font-size: 12px;
-        padding: 8px 12px;
-      }
-
       .caption {
         padding: 55px 18px 20px;
       }
@@ -602,11 +584,15 @@
       }
 
       .footer {
-        font-size: 15px;
+        font-size: 18px;
       }
 
       .copyright {
-        font-size: 12px;
+        font-size: 16px;
+      }
+
+      .copyright strong {
+        font-size: 18px;
       }
     }
   </style>
@@ -615,7 +601,6 @@
 <body>
   <main class="page">
 
-    <!-- Header with Futuristic Sportec Style and flying black fabric flag -->
     <header class="header">
 
       <div class="header-text">
@@ -644,12 +629,10 @@
 
     </header>
 
-    <!-- Three larger images in order: left, middle, right -->
     <section class="gallery-area">
       <section class="gallery">
 
         <article class="card">
-          <span class="label">Left Angle</span>
           <img src="image-left.png" alt="Newson Sportec motocross sky angle" />
           <div class="caption">
             <h2>Sky Angle</h2>
@@ -658,7 +641,6 @@
         </article>
 
         <article class="card">
-          <span class="label">Middle Angle</span>
           <img src="image-middle.png" alt="Newson Sportec motocross front angle" />
           <div class="caption">
             <h2>Front Angle</h2>
@@ -667,7 +649,6 @@
         </article>
 
         <article class="card">
-          <span class="label">Right Angle</span>
           <img src="image-right.png" alt="Newson Sportec motocross rear angle" />
           <div class="caption">
             <h2>Rear Angle</h2>
@@ -690,3 +671,20 @@
   </main>
 </body>
 </html>
+   
+     
+       
+
+    
+     
+     
+     
+   
+         
+      
+
+     
+
+    
+           
+    

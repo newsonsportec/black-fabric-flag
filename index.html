@@ -5,7 +5,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO description -->
   <meta
     name="description"
     content="Newson Sportec Motocross Action gallery featuring modern dirt bike rider visuals, racing energy, wheel parts branding, and motorsport-inspired design."
@@ -56,54 +55,56 @@
       top: 0;
       z-index: 100;
       width: 100%;
-      max-width: 1800px;
-      margin: 0 auto 24px;
-      padding: 14px 18px;
-      border-radius: 22px;
-      border: 2px solid rgba(200, 255, 66, 0.36);
-      background: rgba(0, 0, 0, 0.82);
+      max-width: 2952px;
+      margin: 0 auto 30px;
+      padding: 26px 30px;
+      border-radius: 28px;
+      border: 3px solid rgba(200, 255, 66, 0.42);
+      background: rgba(0, 0, 0, 0.86);
       backdrop-filter: blur(12px);
       box-shadow:
-        0 18px 42px rgba(0, 0, 0, 0.65),
-        0 0 28px rgba(200, 255, 66, 0.12);
+        0 22px 50px rgba(0, 0, 0, 0.72),
+        0 0 34px rgba(200, 255, 66, 0.18);
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 28px;
       flex-wrap: wrap;
     }
 
     .nav-logo {
       color: #c8ff42;
-      font-size: clamp(20px, 2.4vw, 34px);
+      font-size: clamp(38px, 4vw, 72px);
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      text-shadow: 0 0 16px rgba(200, 255, 66, 0.45);
+      text-shadow: 0 0 18px rgba(200, 255, 66, 0.55);
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 24px;
       flex-wrap: wrap;
     }
 
+    /* Top menu words x3 bigger */
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 45px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 10px 14px;
+      letter-spacing: 2px;
+      padding: 24px 34px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
       transition:
         transform 0.25s ease,
         color 0.25s ease,
@@ -113,11 +114,11 @@
     }
 
     .nav-links a:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px) scale(1.04);
       color: #c8ff42;
-      border-color: rgba(200, 255, 66, 0.78);
-      background: rgba(200, 255, 66, 0.1);
-      box-shadow: 0 0 18px rgba(200, 255, 66, 0.35);
+      border-color: rgba(200, 255, 66, 0.9);
+      background: rgba(200, 255, 66, 0.12);
+      box-shadow: 0 0 24px rgba(200, 255, 66, 0.42);
     }
 
     .content-track {
@@ -150,7 +151,6 @@
       border: 3px solid #111111;
     }
 
-    /* Header banner aligned with the 3 images below */
     .hero-header {
       position: relative;
       z-index: 20;
@@ -174,7 +174,6 @@
       object-position: center;
     }
 
-    /* Brand introduction */
     .brand-intro {
       width: 2952px;
       margin: 0 auto 34px;
@@ -215,7 +214,6 @@
       color: #c8ff42;
     }
 
-    /* Buttons */
     .action-buttons {
       width: 2952px;
       margin: 0 auto 38px;
@@ -262,7 +260,6 @@
         0 0 42px rgba(200, 255, 66, 0.58);
     }
 
-    /* 3 image cards: 960px x 3 + 36px gaps x 2 = 2952px */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 960px);
@@ -376,7 +373,6 @@
       text-shadow: 0 0 16px rgba(200, 255, 66, 0.4);
     }
 
-    /* Safety note */
     .safety-note {
       width: 2952px;
       margin: 26px auto 10px;
@@ -399,7 +395,6 @@
       color: #ffb13b;
     }
 
-    /* Footer */
     .footer {
       position: relative;
       z-index: 10;
@@ -438,7 +433,6 @@
       text-shadow: 0 0 16px rgba(200, 255, 66, 0.6);
     }
 
-    /* Social media icons */
     .social-label {
       margin-top: 34px;
       font-size: 24px;
@@ -498,7 +492,6 @@
       fill: currentColor;
     }
 
-    /* Image popup lightbox */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -580,16 +573,13 @@
         width: 2336px;
       }
 
-      .hero-header {
-        border-radius: 28px;
+      .nav-links a {
+        font-size: 36px;
+        padding: 20px 28px;
       }
 
-      .brand-intro h1 {
-        font-size: 56px;
-      }
-
-      .brand-intro p {
-        font-size: 28px;
+      .nav-logo {
+        font-size: 52px;
       }
     }
 
@@ -608,8 +598,13 @@
         width: 1908px;
       }
 
-      .hero-header {
-        border-radius: 24px;
+      .nav-links a {
+        font-size: 28px;
+        padding: 16px 22px;
+      }
+
+      .nav-logo {
+        font-size: 42px;
       }
 
       .caption h2 {
@@ -631,16 +626,6 @@
       .copyright strong {
         font-size: 28px;
       }
-
-      .social-icons a {
-        width: 66px;
-        height: 66px;
-      }
-
-      .social-icons svg {
-        width: 32px;
-        height: 32px;
-      }
     }
 
     @media (max-width: 600px) {
@@ -650,15 +635,20 @@
 
       .nav {
         border-radius: 18px;
+        padding: 18px;
       }
 
       .nav-logo {
-        font-size: 20px;
+        font-size: 28px;
+      }
+
+      .nav-links {
+        gap: 12px;
       }
 
       .nav-links a {
-        font-size: 12px;
-        padding: 8px 10px;
+        font-size: 20px;
+        padding: 12px 16px;
       }
 
       .hero-header,
@@ -669,16 +659,6 @@
         width: 1296px;
       }
 
-      .hero-header {
-        border-radius: 20px;
-        margin-bottom: 24px;
-      }
-
-      .brand-intro {
-        padding: 24px;
-        border-radius: 22px;
-      }
-
       .brand-intro h1 {
         font-size: 38px;
       }
@@ -687,24 +667,10 @@
         font-size: 21px;
       }
 
-      .action-buttons {
-        gap: 18px;
-      }
-
-      .action-button {
-        min-width: 300px;
-        font-size: 18px;
-        padding: 18px 24px;
-      }
-
       .gallery {
         grid-template-columns: repeat(3, 420px);
         gap: 18px;
         width: 1296px;
-      }
-
-      .card {
-        border-radius: 22px;
       }
 
       .caption {
@@ -740,10 +706,6 @@
         font-size: 22px;
       }
 
-      .social-icons {
-        gap: 18px;
-      }
-
       .social-icons a {
         width: 58px;
         height: 58px;
@@ -757,14 +719,6 @@
       .social-label {
         font-size: 16px;
       }
-
-      .lightbox {
-        padding: 14px;
-      }
-
-      .lightbox-content {
-        border-radius: 18px;
-      }
     }
   </style>
 </head>
@@ -772,7 +726,6 @@
 <body>
   <main class="page" id="home">
 
-    <!-- Navigation bar -->
     <nav class="nav">
       <div class="nav-inner">
         <div class="nav-logo">Newson Sportec</div>
@@ -790,7 +743,6 @@
     <section class="gallery-area">
       <div class="content-track">
 
-        <!-- Header banner aligned with the three images below -->
         <header class="hero-header">
           <img
             src="header-banner.png"
@@ -798,7 +750,6 @@
           />
         </header>
 
-        <!-- Brand introduction -->
         <section class="brand-intro">
           <h1>Motocross Energy. Newson Sportec Style.</h1>
 
@@ -809,7 +760,6 @@
           </p>
         </section>
 
-        <!-- Main action buttons -->
         <section class="action-buttons">
           <a
             class="action-button"
@@ -834,7 +784,6 @@
           Click each image to view it larger
         </div>
 
-        <!-- Three motocross images -->
         <section class="gallery" id="gallery">
 
           <article class="card" data-large="image-left.png">
@@ -875,7 +824,6 @@
 
         </section>
 
-        <!-- Safety note -->
         <section class="safety-note">
           <strong>Rider Safety Note:</strong>
           All riding visuals are for creative promotional design. Always ride safely,
@@ -899,7 +847,6 @@
 
       <div class="social-icons">
 
-        <!-- Facebook -->
         <a
           href="https://www.facebook.com/Newsonsportecnews"
           target="_blank"
@@ -911,7 +858,6 @@
           </svg>
         </a>
 
-        <!-- Instagram -->
         <a
           href="https://www.instagram.com/newsonsportec"
           target="_blank"
@@ -923,7 +869,6 @@
           </svg>
         </a>
 
-        <!-- LinkedIn -->
         <a
           href="https://www.linkedin.com/company/111531327/admin/dashboard/"
           target="_blank"
@@ -940,7 +885,6 @@
 
   </main>
 
-  <!-- Image lightbox popup -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightboxClose" aria-label="Close large image">

@@ -49,7 +49,7 @@
       padding: 24px;
     }
 
-    /* Navigation bar */
+    /* Top navigation bar */
     .nav {
       position: sticky;
       top: 0;
@@ -57,10 +57,10 @@
       width: 100%;
       max-width: 2952px;
       margin: 0 auto 30px;
-      padding: 26px 30px;
+      padding: 22px 30px;
       border-radius: 28px;
       border: 3px solid rgba(200, 255, 66, 0.42);
-      background: rgba(0, 0, 0, 0.86);
+      background: rgba(0, 0, 0, 0.88);
       backdrop-filter: blur(12px);
       box-shadow:
         0 22px 50px rgba(0, 0, 0, 0.72),
@@ -71,18 +71,34 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 32px;
       flex-wrap: wrap;
     }
 
+    /* Logo replaces the words "Newson Sportec" */
     .nav-logo {
-      color: #c8ff42;
-      font-size: clamp(38px, 4vw, 72px);
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-shadow: 0 0 18px rgba(200, 255, 66, 0.55);
-      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 420px;
+      max-width: 100%;
+      padding: 8px 12px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(200, 255, 66, 0.25);
+      box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.65),
+        0 0 22px rgba(200, 255, 66, 0.12);
+    }
+
+    .nav-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 5px 12px rgba(0, 0, 0, 0.85))
+        drop-shadow(0 0 12px rgba(200, 255, 66, 0.18));
     }
 
     .nav-links {
@@ -260,6 +276,18 @@
         0 0 42px rgba(200, 255, 66, 0.58);
     }
 
+    .click-note {
+      width: 2952px;
+      margin: 4px auto 22px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 900;
+      color: #c8ff42;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 16px rgba(200, 255, 66, 0.4);
+    }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 960px);
@@ -359,18 +387,6 @@
 
     .card:hover::after {
       opacity: 1;
-    }
-
-    .click-note {
-      width: 2952px;
-      margin: 4px auto 22px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: 900;
-      color: #c8ff42;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 16px rgba(200, 255, 66, 0.4);
     }
 
     .safety-note {
@@ -573,13 +589,13 @@
         width: 2336px;
       }
 
+      .nav-logo {
+        width: 360px;
+      }
+
       .nav-links a {
         font-size: 36px;
         padding: 20px 28px;
-      }
-
-      .nav-logo {
-        font-size: 52px;
       }
     }
 
@@ -598,13 +614,13 @@
         width: 1908px;
       }
 
+      .nav-logo {
+        width: 320px;
+      }
+
       .nav-links a {
         font-size: 28px;
         padding: 16px 22px;
-      }
-
-      .nav-logo {
-        font-size: 42px;
       }
 
       .caption h2 {
@@ -635,11 +651,11 @@
 
       .nav {
         border-radius: 18px;
-        padding: 18px;
+        padding: 16px;
       }
 
       .nav-logo {
-        font-size: 28px;
+        width: 260px;
       }
 
       .nav-links {
@@ -728,7 +744,11 @@
 
     <nav class="nav">
       <div class="nav-inner">
-        <div class="nav-logo">Newson Sportec</div>
+
+        <!-- Logo replaces the old "Newson Sportec" words -->
+        <a class="nav-logo" href="#home" aria-label="Newson Sportec Home">
+          <img src="logo.png" alt="Newson Sportec Logo" />
+        </a>
 
         <div class="nav-links">
           <a href="#home">Home</a>

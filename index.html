@@ -36,20 +36,28 @@
       padding: 24px;
     }
 
-    /* New header banner image */
+    /*
+      This wrapper controls the header and the 3 images together.
+      Header width now matches the three-image gallery width.
+    */
+    .content-track {
+      width: max-content;
+      margin: 0 auto;
+    }
+
+    /* Header banner aligned with the 3 images below */
     .hero-header {
       position: relative;
       z-index: 20;
-      width: 100%;
-      max-width: 1800px;
-      margin: 0 auto 34px;
-      border-radius: 28px;
+      width: 2952px;
+      margin: 0 auto 36px;
+      border-radius: 34px;
       overflow: hidden;
-      border: 2px solid rgba(200, 255, 66, 0.42);
+      border: 3px solid rgba(200, 255, 66, 0.46);
       background: #000000;
       box-shadow:
-        0 24px 60px rgba(0, 0, 0, 0.75),
-        0 0 36px rgba(200, 255, 66, 0.18);
+        0 28px 70px rgba(0, 0, 0, 0.78),
+        0 0 42px rgba(200, 255, 66, 0.22);
     }
 
     .hero-header img {
@@ -67,7 +75,7 @@
       width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
-      padding: 10px 0 24px;
+      padding: 10px 0 28px;
       scroll-behavior: smooth;
     }
 
@@ -86,13 +94,14 @@
       border: 3px solid #111111;
     }
 
+    /* 3 image cards: 960px x 3 + 36px gaps x 2 = 2952px */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 960px);
       gap: 36px;
-      width: max-content;
+      width: 2952px;
       margin: 0 auto;
-      padding: 10px 8px 18px;
+      padding: 10px 0 18px;
     }
 
     .card {
@@ -189,51 +198,63 @@
       position: relative;
       z-index: 10;
       text-align: center;
-      margin-top: 16px;
-      padding: 26px 18px;
+      margin-top: 20px;
+      padding: 34px 22px;
       color: #ffffff;
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       opacity: 0.98;
-      border-top: 1px solid rgba(200, 255, 66, 0.25);
+      border-top: 2px solid rgba(200, 255, 66, 0.32);
     }
 
     .footer span {
       color: #c8ff42;
+      text-shadow: 0 0 14px rgba(200, 255, 66, 0.5);
     }
 
     .copyright {
-      margin-top: 16px;
-      font-size: 22px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.88);
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      max-width: 1400px;
+      margin-top: 22px;
+      font-size: 32px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 900;
+      letter-spacing: 1px;
+      max-width: 1900px;
       margin-left: auto;
       margin-right: auto;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
     }
 
     .copyright strong {
       color: #c8ff42;
-      font-size: 24px;
+      font-size: 36px;
+      text-shadow: 0 0 16px rgba(200, 255, 66, 0.6);
     }
 
     @media (max-width: 1100px) {
-      .gallery {
-        grid-template-columns: repeat(3, 760px);
+      .hero-header {
+        width: 2336px;
+        border-radius: 28px;
       }
 
-      .hero-header {
-        border-radius: 22px;
+      .gallery {
+        grid-template-columns: repeat(3, 760px);
+        gap: 28px;
+        width: 2336px;
       }
     }
 
     @media (max-width: 800px) {
+      .hero-header {
+        width: 1908px;
+        border-radius: 24px;
+      }
+
       .gallery {
         grid-template-columns: repeat(3, 620px);
         gap: 24px;
+        width: 1908px;
       }
 
       .caption h2 {
@@ -244,12 +265,16 @@
         font-size: 18px;
       }
 
+      .footer {
+        font-size: 24px;
+      }
+
       .copyright {
-        font-size: 18px;
+        font-size: 24px;
       }
 
       .copyright strong {
-        font-size: 20px;
+        font-size: 28px;
       }
     }
 
@@ -259,18 +284,15 @@
       }
 
       .hero-header {
-        border-radius: 18px;
-        margin-bottom: 22px;
-      }
-
-      .hero-header img {
-        aspect-ratio: 3 / 1;
-        object-fit: cover;
+        width: 1296px;
+        border-radius: 20px;
+        margin-bottom: 24px;
       }
 
       .gallery {
         grid-template-columns: repeat(3, 420px);
         gap: 18px;
+        width: 1296px;
       }
 
       .card {
@@ -290,15 +312,15 @@
       }
 
       .footer {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       .copyright {
-        font-size: 16px;
+        font-size: 20px;
       }
 
       .copyright strong {
-        font-size: 18px;
+        font-size: 22px;
       }
     }
   </style>
@@ -307,40 +329,44 @@
 <body>
   <main class="page">
 
-    <!-- New head image -->
-    <header class="hero-header">
-      <img src="header-banner.png" alt="Newson Sportec Motocross Action Banner" />
-    </header>
-
-    <!-- Three motocross images -->
     <section class="gallery-area">
-      <section class="gallery">
+      <div class="content-track">
 
-        <article class="card">
-          <img src="image-left.png" alt="Newson Sportec motocross sky angle" />
-          <div class="caption">
-            <h2>Sky Angle</h2>
-            <p>High-speed dirt racing from above.</p>
-          </div>
-        </article>
+        <!-- Header banner now aligns with the three images below -->
+        <header class="hero-header">
+          <img src="header-banner.png" alt="Newson Sportec Motocross Action Banner" />
+        </header>
 
-        <article class="card">
-          <img src="image-middle.png" alt="Newson Sportec motocross front angle" />
-          <div class="caption">
-            <h2>Front Angle</h2>
-            <p>Power, focus, and performance on the trail.</p>
-          </div>
-        </article>
+        <!-- Three motocross images -->
+        <section class="gallery">
 
-        <article class="card">
-          <img src="image-right.png" alt="Newson Sportec motocross rear angle" />
-          <div class="caption">
-            <h2>Rear Angle</h2>
-            <p>Dust, speed, and strong racing energy.</p>
-          </div>
-        </article>
+          <article class="card">
+            <img src="image-left.png" alt="Newson Sportec motocross sky angle" />
+            <div class="caption">
+              <h2>Sky Angle</h2>
+              <p>High-speed dirt racing from above.</p>
+            </div>
+          </article>
 
-      </section>
+          <article class="card">
+            <img src="image-middle.png" alt="Newson Sportec motocross front angle" />
+            <div class="caption">
+              <h2>Front Angle</h2>
+              <p>Power, focus, and performance on the trail.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="image-right.png" alt="Newson Sportec motocross rear angle" />
+            <div class="caption">
+              <h2>Rear Angle</h2>
+              <p>Dust, speed, and strong racing energy.</p>
+            </div>
+          </article>
+
+        </section>
+
+      </div>
     </section>
 
     <footer class="footer">

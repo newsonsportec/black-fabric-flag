@@ -30,8 +30,8 @@
       width: 100%;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(200, 255, 66, 0.16), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(0, 255, 120, 0.08), transparent 35%),
+        radial-gradient(circle at top left, rgba(185, 255, 43, 0.14), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(255, 140, 0, 0.12), transparent 35%),
         linear-gradient(135deg, #050505, #111111 45%, #000000);
       padding: 24px;
     }
@@ -43,22 +43,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 26px;
-      margin-bottom: 28px;
-      padding: 18px 22px;
-      border: 1px solid rgba(200, 255, 66, 0.45);
+      gap: 24px;
+      margin-bottom: 30px;
+      padding: 22px 26px;
+      border: 1px solid rgba(200, 255, 66, 0.38);
       border-radius: 26px;
       background: rgba(0, 0, 0, 0.72);
       box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.65),
-        0 0 28px rgba(200, 255, 66, 0.12);
+        0 20px 48px rgba(0, 0, 0, 0.65),
+        0 0 28px rgba(200, 255, 66, 0.08);
       backdrop-filter: blur(10px);
     }
 
     /* Futuristic Sportec Style */
-    .sportec-title {
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: clamp(34px, 5vw, 76px);
+    .futuristic-title {
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+      font-size: clamp(36px, 5.2vw, 82px);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 6px;
@@ -66,31 +66,22 @@
       line-height: 1.05;
       text-shadow:
         0 0 10px rgba(200, 255, 66, 0.95),
-        0 0 24px rgba(200, 255, 66, 0.55),
+        0 0 24px rgba(200, 255, 66, 0.5),
         3px 3px 0 #000000,
-        6px 6px 16px rgba(0, 0, 0, 0.95);
+        7px 7px 18px rgba(0, 0, 0, 0.95);
     }
 
     .header-text p {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: clamp(15px, 1.8vw, 24px);
-      font-weight: 900;
+      font-weight: 800;
       color: #ffffff;
       letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.95);
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.9);
     }
 
-    .green-line {
-      width: min(680px, 100%);
-      height: 5px;
-      margin-top: 14px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #c8ff42, #42ff88, transparent);
-      box-shadow: 0 0 18px rgba(200, 255, 66, 0.65);
-    }
-
-    /* Black fabric flag */
+    /* Small waving black fabric flag */
     .flag-scene {
       position: relative;
       width: 310px;
@@ -355,67 +346,63 @@
       }
     }
 
-    /* x5 image gallery */
-    .gallery-section {
+    /* Gallery outer area */
+    .gallery-area {
       position: relative;
       z-index: 10;
       width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
-      padding-bottom: 28px;
-      scroll-snap-type: x mandatory;
+      padding: 10px 0 24px;
+      scroll-behavior: smooth;
     }
 
-    .gallery-section::-webkit-scrollbar {
-      height: 18px;
+    .gallery-area::-webkit-scrollbar {
+      height: 16px;
     }
 
-    .gallery-section::-webkit-scrollbar-track {
+    .gallery-area::-webkit-scrollbar-track {
       background: #111111;
       border-radius: 999px;
     }
 
-    .gallery-section::-webkit-scrollbar-thumb {
-      background: linear-gradient(90deg, #c8ff42, #42ff88);
+    .gallery-area::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #c8ff42, #6c8f18);
       border-radius: 999px;
-      border: 4px solid #111111;
+      border: 3px solid #111111;
     }
 
+    /* 3 images x2 bigger */
     .gallery {
-      display: flex;
-      gap: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, 960px);
+      gap: 36px;
       width: max-content;
-      padding: 10px 6px 18px;
+      margin: 0 auto;
+      padding: 10px 8px 18px;
     }
 
-    /* 
-      Each image card is x5 bigger than the old 3-column card.
-      Users can scroll left and right to see all 3 large images.
-    */
     .card {
       position: relative;
-      width: min(500vw, 2800px);
-      max-width: none;
       overflow: hidden;
       border-radius: 34px;
-      border: 3px solid rgba(200, 255, 66, 0.5);
+      border: 3px solid rgba(200, 255, 66, 0.42);
       background: #111111;
       box-shadow:
-        0 28px 70px rgba(0, 0, 0, 0.78),
-        0 0 35px rgba(200, 255, 66, 0.16);
+        0 28px 60px rgba(0, 0, 0, 0.72),
+        0 0 35px rgba(200, 255, 66, 0.1);
       transition:
         transform 0.35s ease,
         box-shadow 0.35s ease,
         border-color 0.35s ease;
-      scroll-snap-align: start;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.006);
-      border-color: rgba(200, 255, 66, 0.95);
+      transform: translateY(-10px) scale(1.012);
+      border-color: rgba(200, 255, 66, 0.9);
       box-shadow:
-        0 38px 90px rgba(0, 0, 0, 0.85),
-        0 0 50px rgba(200, 255, 66, 0.3);
+        0 35px 75px rgba(0, 0, 0, 0.84),
+        0 0 42px rgba(200, 255, 66, 0.3);
     }
 
     .card img {
@@ -423,11 +410,13 @@
       width: 100%;
       aspect-ratio: 1122 / 1402;
       object-fit: cover;
-      transition: transform 0.6s ease, filter 0.6s ease;
+      transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
     }
 
     .card:hover img {
-      transform: scale(1.025);
+      transform: scale(1.04);
       filter: brightness(1.08) contrast(1.08);
     }
 
@@ -435,18 +424,17 @@
       position: absolute;
       left: 28px;
       top: 28px;
-      padding: 12px 22px;
+      padding: 12px 20px;
       border-radius: 999px;
-      background: rgba(0, 0, 0, 0.78);
+      background: rgba(0, 0, 0, 0.76);
       color: #c8ff42;
       font-weight: 900;
       letter-spacing: 2px;
       text-transform: uppercase;
-      font-size: clamp(18px, 1.6vw, 30px);
-      border: 1px solid rgba(200, 255, 66, 0.6);
+      font-size: 18px;
+      border: 1px solid rgba(200, 255, 66, 0.58);
       backdrop-filter: blur(8px);
       z-index: 3;
-      box-shadow: 0 0 18px rgba(200, 255, 66, 0.25);
     }
 
     .caption {
@@ -454,7 +442,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 110px 42px 42px;
+      padding: 95px 32px 32px;
       background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.9),
@@ -464,25 +452,19 @@
     }
 
     .caption h2 {
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: clamp(42px, 5vw, 96px);
+      font-size: clamp(34px, 3vw, 58px);
       font-weight: 900;
-      letter-spacing: 5px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: #c8ff42;
-      text-shadow:
-        0 0 12px rgba(200, 255, 66, 0.85),
-        0 0 28px rgba(200, 255, 66, 0.45),
-        4px 4px 0 #000000;
+      color: #ffffff;
+      text-shadow: 0 5px 16px rgba(0, 0, 0, 0.95);
     }
 
     .caption p {
-      margin-top: 14px;
-      font-size: clamp(22px, 2.2vw, 42px);
+      margin-top: 10px;
+      font-size: clamp(18px, 1.5vw, 26px);
       font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 1px;
-      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.95);
+      color: #d8ff6a;
     }
 
     .card::after {
@@ -495,7 +477,7 @@
           rgba(255, 255, 255, 0.16),
           transparent 30%,
           transparent 70%,
-          rgba(200, 255, 66, 0.14)
+          rgba(200, 255, 66, 0.12)
         );
       opacity: 0;
       transition: opacity 0.35s ease;
@@ -511,37 +493,33 @@
       position: relative;
       z-index: 10;
       margin: 0 auto 18px;
-      padding: 12px 18px;
-      width: fit-content;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.72);
-      border: 1px solid rgba(200, 255, 66, 0.45);
+      text-align: center;
       color: #c8ff42;
       font-size: 18px;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      box-shadow: 0 0 22px rgba(200, 255, 66, 0.12);
+      opacity: 0.9;
     }
 
     .footer {
       position: relative;
       z-index: 10;
       text-align: center;
-      margin-top: 20px;
-      padding: 20px;
+      margin-top: 16px;
+      padding: 18px;
       color: #ffffff;
       font-size: 18px;
       font-weight: 800;
       letter-spacing: 1px;
-      opacity: 0.95;
+      opacity: 0.92;
     }
 
     .footer span {
       color: #c8ff42;
-      text-shadow: 0 0 12px rgba(200, 255, 66, 0.75);
     }
 
+    /* Responsive */
     @media (max-width: 1100px) {
       .header {
         flex-direction: column;
@@ -553,8 +531,23 @@
         margin-left: -12px;
       }
 
-      .card {
-        width: min(500vw, 2200px);
+      .gallery {
+        grid-template-columns: repeat(3, 760px);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: repeat(3, 620px);
+        gap: 24px;
+      }
+
+      .caption h2 {
+        font-size: 36px;
+      }
+
+      .caption p {
+        font-size: 18px;
       }
     }
 
@@ -564,11 +557,11 @@
       }
 
       .header {
-        padding: 14px;
+        padding: 16px;
         border-radius: 18px;
       }
 
-      .sportec-title {
+      .futuristic-title {
         letter-spacing: 3px;
       }
 
@@ -580,21 +573,35 @@
       }
 
       .gallery {
-        gap: 24px;
+        grid-template-columns: repeat(3, 420px);
+        gap: 18px;
       }
 
       .card {
-        width: 500vw;
         border-radius: 22px;
       }
 
       .label {
-        left: 18px;
-        top: 18px;
+        left: 14px;
+        top: 14px;
+        font-size: 12px;
+        padding: 8px 12px;
       }
 
       .caption {
-        padding: 80px 24px 28px;
+        padding: 55px 18px 20px;
+      }
+
+      .caption h2 {
+        font-size: 28px;
+      }
+
+      .caption p {
+        font-size: 15px;
+      }
+
+      .scroll-note {
+        font-size: 14px;
       }
     }
   </style>
@@ -603,13 +610,12 @@
 <body>
   <main class="page">
 
-    <!-- Header with Futuristic Sportec Style and black fabric flag -->
+    <!-- Header with Futuristic Sportec Style and flying black fabric flag -->
     <header class="header">
 
       <div class="header-text">
-        <h1 class="sportec-title">Newson Sportec Motocross Action</h1>
+        <h1 class="futuristic-title">Newson Sportec Motocross Action</h1>
         <p>Power. Speed. Performance.</p>
-        <div class="green-line"></div>
       </div>
 
       <section class="flag-scene" aria-label="Newson Sportec black fabric flag">
@@ -634,12 +640,12 @@
     </header>
 
     <div class="scroll-note">
-      Scroll left and right to view the x5 larger images
+      Swipe or scroll sideways to view the x2 larger motocross images
     </div>
 
-    <!-- Three images enlarged x5 -->
-    <section class="gallery-section">
-      <div class="gallery">
+    <!-- Three larger images in order: left, middle, right -->
+    <section class="gallery-area">
+      <section class="gallery">
 
         <article class="card">
           <span class="label">Left Angle</span>
@@ -668,7 +674,7 @@
           </div>
         </article>
 
-      </div>
+      </section>
     </section>
 
     <footer class="footer">
@@ -678,3 +684,5 @@
   </main>
 </body>
 </html>
+     
+      

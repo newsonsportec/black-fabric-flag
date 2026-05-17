@@ -3,280 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Newson Sportec Waving Flag</title>
+
+  <title>Newson Sportec Black Fabric Flag</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
-      background: radial-gradient(circle at center, #2b2b2b 0%, #0b0b0b 70%);
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #2a2a2a 0%, #101010 45%, #000 100%);
+      color: white;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
+      justify-content: center;
       overflow: hidden;
     }
 
-    .scene {
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 5vw, 76px);
+      letter-spacing: 4px;
+      color: #ff8a00;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 10px rgba(255, 138, 0, 0.7),
+        0 0 25px rgba(255, 138, 0, 0.4);
+    }
+
+    .subtitle {
+      margin-bottom: 40px;
+      font-size: clamp(16px, 2vw, 26px);
+      color: #f1f1f1;
+      letter-spacing: 2px;
+    }
+
+    .flag-scene {
       position: relative;
-      width: 1000px;
-      height: 600px;
+      width: min(1000px, 92vw);
+      height: 460px;
       display: flex;
       align-items: center;
       justify-content: center;
       perspective: 1200px;
     }
 
-    /* Metal pole */
-    .pole {
-      position: absolute;
-      left: 120px;
-      top: 70px;
-      width: 28px;
-      height: 480px;
-      background: linear-gradient(
-        90deg,
-        #555,
-        #d9d9d9,
-        #777,
-        #f5f5f5,
-        #444
-      );
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
-      z-index: 10;
-    }
-
-    .pole-top {
-      position: absolute;
-      left: 104px;
-      top: 35px;
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, #ffffff, #777);
-      border-radius: 50%;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
-      z-index: 11;
-    }
-
     /* Flag wrapper */
     .flag {
-      position: absolute;
-      left: 145px;
-      top: 105px;
-      width: 720px;
-      height: 330px;
-      display: flex;
+      position: relative;
+      width: 780px;
+      height: 300px;
       transform-style: preserve-3d;
-      filter: drop-shadow(30px 35px 35px rgba(0, 0, 0, 0.7));
+      transform-origin: left center;
+      animation: flagSwing 4s ease-in-out infinite;
+      filter: drop-shadow(0 35px 35px rgba(0,0,0,0.7));
     }
 
-    /* Each strip moves slightly differently to create a wave */
-    .stripe {
-      width: 10%;
-      height: 100%;
-      background-image:
+    /* Main flag fabric */
+    .fabric {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background:
         linear-gradient(
           90deg,
-          rgba(255, 255, 255, 0.12),
-          rgba(0, 0, 0, 0.3),
-          rgba(255, 255, 255, 0.08)
-        ),
-        url("logo.png");
-      background-size: 720px 330px;
-      background-repeat: no-repeat;
-      background-color: #050505;
-      animation: wave 2.2s ease-in-out infinite;
-      transform-origin: left center;
-      border-top: 2px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+          #020202 0%,
+          #141414 12%,
+          #050505 25%,
+          #1d1d1d 38%,
+          #030303 50%,
+          #171717 63%,
+          #050505 78%,
+          #1a1a1a 100%
+        );
+      clip-path: polygon(
+        0% 0%,
+        100% 7%,
+        94% 50%,
+        100% 93%,
+        0% 100%
+      );
+      animation: fabricWave 2.8s ease-in-out infinite;
     }
 
-    .stripe:nth-child(1) {
-      background-position: 0px 0;
-      animation-delay: 0s;
+    /* Cloth folds */
+    .fabric::before {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.13), transparent 16%),
+        radial-gradient(circle at 45% 55%, rgba(255,255,255,0.09), transparent 18%),
+        radial-gradient(circle at 75% 35%, rgba(255,255,255,0.12), transparent 20%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.14) 0px,
+          rgba(255,255,255,0.03) 28px,
+          rgba(0,0,0,0.55) 58px,
+          rgba(0,0,0,0.1) 95px
+        );
+      mix-blend-mode: screen;
+      opacity: 0.55;
+      animation: foldMove 2.8s ease-in-out infinite;
     }
 
-    .stripe:nth-child(2) {
-      background-position: -72px 0;
-      animation-delay: -0.12s;
-    }
-
-    .stripe:nth-child(3) {
-      background-position: -144px 0;
-      animation-delay: -0.24s;
-    }
-
-    .stripe:nth-child(4) {
-      background-position: -216px 0;
-      animation-delay: -0.36s;
-    }
-
-    .stripe:nth-child(5) {
-      background-position: -288px 0;
-      animation-delay: -0.48s;
-    }
-
-    .stripe:nth-child(6) {
-      background-position: -360px 0;
-      animation-delay: -0.60s;
-    }
-
-    .stripe:nth-child(7) {
-      background-position: -432px 0;
-      animation-delay: -0.72s;
-    }
-
-    .stripe:nth-child(8) {
-      background-position: -504px 0;
-      animation-delay: -0.84s;
-    }
-
-    .stripe:nth-child(9) {
-      background-position: -576px 0;
-      animation-delay: -0.96s;
-    }
-
-    .stripe:nth-child(10) {
-      background-position: -648px 0;
-      animation-delay: -1.08s;
-    }
-
-    @keyframes wave {
-      0% {
-        transform: rotateY(18deg) translateY(0px);
-        filter: brightness(0.85);
-      }
-
-      25% {
-        transform: rotateY(-12deg) translateY(-10px);
-        filter: brightness(1.15);
-      }
-
-      50% {
-        transform: rotateY(16deg) translateY(6px);
-        filter: brightness(0.75);
-      }
-
-      75% {
-        transform: rotateY(-18deg) translateY(-6px);
-        filter: brightness(1.1);
-      }
-
-      100% {
-        transform: rotateY(18deg) translateY(0px);
-        filter: brightness(0.85);
-      }
-    }
-
-    /* Cloth texture overlay */
-    .flag::after {
+    /* Fabric texture */
+    .fabric::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
         repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.04) 0px,
-          rgba(255, 255, 255, 0.04) 1px,
+          45deg,
+          rgba(255,255,255,0.035) 0px,
+          rgba(255,255,255,0.035) 1px,
           transparent 1px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.025) 0px,
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px,
-          transparent 7px
+          transparent 5px
         );
-      mix-blend-mode: screen;
+      opacity: 0.35;
       pointer-events: none;
-      opacity: 0.5;
     }
 
-    /* Left sleeve connected to pole */
-    .flag-sleeve {
+    .logo-area {
       position: absolute;
-      left: 135px;
-      top: 105px;
-      width: 30px;
-      height: 330px;
-      background: linear-gradient(90deg, #050505, #222, #050505);
-      border-left: 2px solid rgba(255, 255, 255, 0.2);
-      border-right: 2px solid rgba(255, 255, 255, 0.1);
-      z-index: 9;
+      inset: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 45px;
+      transform-origin: left center;
+      animation: logoWave 2.8s ease-in-out infinite;
     }
 
-    .title {
-      position: absolute;
-      bottom: 35px;
-      width: 100%;
-      text-align: center;
-      color: #ff8800;
-      font-size: 38px;
+    .logo-box {
+      width: 78%;
+      max-width: 620px;
+      padding: 28px 35px;
+      border: 4px solid #ff8a00;
+      background: rgba(0,0,0,0.52);
+      transform: skewX(-8deg);
+      box-shadow:
+        inset 0 0 30px rgba(255,138,0,0.12),
+        0 0 26px rgba(255,138,0,0.25);
+    }
+
+    .brand {
+      font-size: clamp(36px, 6vw, 82px);
       font-weight: 900;
-      letter-spacing: 4px;
+      line-height: 0.9;
+      letter-spacing: 5px;
+      color: #ffffff;
       text-transform: uppercase;
       text-shadow:
-        0 0 10px rgba(255, 128, 0, 0.8),
-        0 0 25px rgba(255, 128, 0, 0.5);
+        0 0 10px rgba(255,255,255,0.35),
+        4px 4px 0 rgba(0,0,0,0.8);
     }
 
-    .subtitle {
+    .sportec {
+      margin-top: 14px;
+      font-size: clamp(22px, 3vw, 45px);
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: #ff8a00;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 8px rgba(255,138,0,0.65),
+        3px 3px 0 rgba(0,0,0,0.8);
+    }
+
+    .slogan {
+      margin-top: 22px;
+      font-size: clamp(15px, 2vw, 28px);
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: #ff8a00;
+      text-transform: uppercase;
+    }
+
+    .wind {
       position: absolute;
-      bottom: 5px;
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-size: 18px;
-      letter-spacing: 3px;
-      opacity: 0.85;
+      width: 180px;
+      height: 4px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      animation: windMove 3s linear infinite;
+      opacity: 0.6;
     }
 
-    @media (max-width: 900px) {
-      .scene {
-        width: 100vw;
-        height: 100vh;
-        transform: scale(0.75);
+    .wind.one {
+      top: 105px;
+      right: -80px;
+      animation-delay: 0s;
+    }
+
+    .wind.two {
+      top: 205px;
+      right: -120px;
+      animation-delay: 0.8s;
+    }
+
+    .wind.three {
+      top: 305px;
+      right: -90px;
+      animation-delay: 1.5s;
+    }
+
+    .note {
+      margin-top: 35px;
+      max-width: 850px;
+      font-size: 18px;
+      color: #d8d8d8;
+      line-height: 1.6;
+    }
+
+    @keyframes flagSwing {
+      0%, 100% {
+        transform: rotateY(-6deg) rotateZ(0deg);
+      }
+      50% {
+        transform: rotateY(8deg) rotateZ(1.2deg);
       }
     }
 
-    @media (max-width: 600px) {
-      .scene {
-        transform: scale(0.5);
+    @keyframes fabricWave {
+      0%, 100% {
+        transform: skewY(0deg) scaleX(1);
+        clip-path: polygon(
+          0% 0%,
+          100% 7%,
+          94% 50%,
+          100% 93%,
+          0% 100%
+        );
+      }
+
+      25% {
+        transform: skewY(-2deg) scaleX(0.985);
+        clip-path: polygon(
+          0% 2%,
+          98% 0%,
+          100% 48%,
+          97% 100%,
+          0% 98%
+        );
+      }
+
+      50% {
+        transform: skewY(2deg) scaleX(1.015);
+        clip-path: polygon(
+          0% 0%,
+          100% 10%,
+          92% 54%,
+          100% 90%,
+          0% 100%
+        );
+      }
+
+      75% {
+        transform: skewY(-1.5deg) scaleX(0.995);
+        clip-path: polygon(
+          0% 1%,
+          97% 5%,
+          100% 52%,
+          96% 95%,
+          0% 99%
+        );
+      }
+    }
+
+    @keyframes foldMove {
+      0%, 100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(45px);
+      }
+    }
+
+    @keyframes logoWave {
+      0%, 100% {
+        transform: translateX(0) skewY(0deg);
+      }
+
+      50% {
+        transform: translateX(12px) skewY(1.5deg);
+      }
+    }
+
+    @keyframes windMove {
+      0% {
+        transform: translateX(180px);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateX(-900px);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .flag-scene {
+        height: 390px;
+      }
+
+      .flag {
+        width: 88vw;
+        height: 235px;
+      }
+
+      .logo-area {
+        padding-left: 20px;
+      }
+
+      .logo-box {
+        padding: 20px 18px;
+      }
+
+      .sportec {
+        letter-spacing: 5px;
+      }
+
+      .slogan {
+        letter-spacing: 3px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="scene">
+  <main class="page">
+    <h1>Newson Sportec</h1>
+    <div class="subtitle">Black Fabric Flag Waves in the Wind</div>
 
-    <div class="pole-top"></div>
-    <div class="pole"></div>
-    <div class="flag-sleeve"></div>
+    <section class="flag-scene">
+      <div class="flag">
+        <div class="fabric"></div>
 
-    <div class="flag">
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-    </div>
+        <div class="logo-area">
+          <div class="logo-box">
+            <div class="brand">Newson</div>
+            <div class="sportec">Sportec</div>
+            <div class="slogan">Ride • Build • Perform</div>
+          </div>
+        </div>
+      </div>
 
-    <div class="title">Newson Sportec</div>
-    <div class="subtitle">RIDE · BUILD · PERFORM</div>
+      <div class="wind one"></div>
+      <div class="wind two"></div>
+      <div class="wind three"></div>
+    </section>
 
-  </div>
+    <p class="note">
+      A black fabric flag with the orange Newson Sportec logo waves in the wind.
+      Realistic cloth folds and smooth looping motion create a strong racing brand feeling.
+    </p>
+  </main>
 </body>
 </html>
+
+    

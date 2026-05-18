@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Newson Sportec Motocross Action</title>
 
   <style>
@@ -13,49 +14,52 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
+      background: #050505;
       color: white;
       text-align: center;
     }
 
     header {
-      padding: 18px 20px;
-      background: #111;
-      border-bottom: 2px solid #ff7a00;
-    }
-
-    nav {
-      margin-top: 10px;
+      background: #000;
+      padding: 16px 20px;
+      border-bottom: 2px solid #9cff00;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 14px;
+      margin: 0 16px;
       font-size: 18px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
 
     nav a:hover {
-      color: #ff7a00;
+      color: #9cff00;
     }
 
     .hero {
-      padding: 25px 20px;
+      padding: 25px 20px 10px;
     }
 
     .hero img {
-      width: 70%;
-      max-width: 850px;
+      width: 92%;
+      max-width: 1200px;
       height: auto;
-      border-radius: 18px;
-      box-shadow: 0 0 25px rgba(255, 122, 0, 0.35);
+      border-radius: 14px;
+      box-shadow: 0 0 30px rgba(156, 255, 0, 0.3);
+      cursor: pointer;
     }
 
     h1 {
-      font-size: 34px;
-      margin: 22px 0 12px;
-      color: #ff7a00;
+      color: #9cff00;
+      font-size: 38px;
+      margin: 28px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .intro {
@@ -63,179 +67,203 @@
       margin: 0 auto;
       font-size: 19px;
       line-height: 1.6;
+      color: #dddddd;
       padding: 0 20px;
     }
 
     .buttons {
-      margin: 25px 0;
+      margin: 28px 0;
     }
 
     .buttons a {
       display: inline-block;
-      background: #ff7a00;
-      color: black;
+      background: #9cff00;
+      color: #000;
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 13px 28px;
       margin: 8px;
       border-radius: 30px;
       font-size: 18px;
       font-weight: bold;
+      box-shadow: 0 0 14px rgba(156, 255, 0, 0.45);
     }
 
     .buttons a:hover {
-      background: #ffaa33;
+      background: #c8ff4d;
+      transform: translateY(-2px);
     }
 
-    .gallery-title {
-      margin-top: 25px;
-      font-size: 20px;
-      color: #ddd;
+    .section-title {
+      color: #9cff00;
+      font-size: 30px;
+      margin: 35px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .small-note {
+      color: #cccccc;
+      font-size: 17px;
+      margin-bottom: 25px;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1100px;
-      margin: 30px auto;
+      gap: 22px;
+      max-width: 1120px;
+      margin: 0 auto 35px;
       padding: 0 25px;
     }
 
     .card {
-      background: #151515;
+      background: #111111;
+      border: 1px solid rgba(156, 255, 0, 0.35);
       border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+      padding: 14px;
+      box-shadow: 0 0 20px rgba(156, 255, 0, 0.12);
     }
 
     .card img {
       width: 100%;
-      max-height: 260px;
+      height: 240px;
       object-fit: cover;
       border-radius: 14px;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: 0.3s ease;
     }
 
     .card img:hover {
       transform: scale(1.03);
+      box-shadow: 0 0 22px rgba(156, 255, 0, 0.45);
     }
 
     .card h2 {
-      color: #ff7a00;
+      color: #9cff00;
       font-size: 24px;
       margin: 14px 0 8px;
     }
 
     .card p {
-      font-size: 17px;
+      color: #dddddd;
+      font-size: 16px;
       line-height: 1.4;
-      color: #ddd;
+      margin: 0 0 8px;
     }
 
     .note {
       max-width: 900px;
-      margin: 25px auto;
-      padding: 16px 22px;
-      background: #1b1b1b;
-      border-left: 5px solid #ff7a00;
+      margin: 35px auto;
+      padding: 18px 24px;
+      background: #111111;
+      border-left: 6px solid #9cff00;
+      text-align: left;
       font-size: 17px;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #dddddd;
     }
 
     footer {
-      margin-top: 35px;
-      padding: 25px 20px;
-      background: #111;
-      color: #ccc;
+      background: #000;
+      padding: 28px 20px;
+      border-top: 2px solid #9cff00;
+      color: #cccccc;
       font-size: 15px;
       line-height: 1.6;
     }
 
     footer h3 {
-      color: #ff7a00;
+      color: #9cff00;
+      font-size: 24px;
+      margin-top: 0;
     }
 
     .social a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
       font-size: 18px;
+      font-weight: bold;
     }
 
     .social a:hover {
-      color: #ff7a00;
+      color: #9cff00;
     }
 
-    /* Popup larger image */
+    /* Lightbox popup */
     .lightbox {
       display: none;
       position: fixed;
-      z-index: 999;
+      z-index: 9999;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.92);
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 25px;
     }
 
     .lightbox img {
-      max-width: 90%;
-      max-height: 85%;
+      max-width: 92%;
+      max-height: 86%;
       border-radius: 16px;
+      box-shadow: 0 0 35px rgba(156, 255, 0, 0.45);
     }
 
     .close {
       position: absolute;
-      top: 25px;
-      right: 35px;
+      top: 20px;
+      right: 34px;
       color: white;
-      font-size: 45px;
+      font-size: 46px;
       font-weight: bold;
       cursor: pointer;
     }
 
     .close:hover {
-      color: #ff7a00;
+      color: #9cff00;
     }
 
     /* Tablet */
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       .gallery {
         grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .hero img {
-        width: 85%;
+        max-width: 620px;
       }
 
       .card img {
-        max-height: 300px;
+        height: 300px;
+      }
+
+      h1 {
+        font-size: 30px;
       }
     }
 
     /* Phone */
     @media (max-width: 600px) {
+      header {
+        padding: 12px;
+      }
+
       nav a {
         display: inline-block;
-        margin: 8px;
-        font-size: 16px;
+        margin: 7px;
+        font-size: 15px;
+      }
+
+      .hero img {
+        width: 100%;
       }
 
       h1 {
-        font-size: 26px;
+        font-size: 25px;
       }
 
       .intro {
         font-size: 16px;
-      }
-
-      .hero img {
-        width: 95%;
       }
 
       .gallery {
@@ -244,7 +272,11 @@
       }
 
       .card img {
-        max-height: 220px;
+        height: 220px;
+      }
+
+      .section-title {
+        font-size: 24px;
       }
     }
   </style>
@@ -254,82 +286,91 @@
 
   <header>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="https://newsonsportec.wixsite.com/wheelparts" target="_blank">Wheel Parts</a>
-      <a href="#contact">Contact</a>
-      <a href="#social">Social</a>
+      <a href="#home">HOME</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="https://newsonsportec.wixsite.com/wheelparts" target="_blank">WHEEL PARTS</a>
+      <a href="#contact">CONTACT</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
-    <img src="banner.png" alt="Newson Sportec Motocross Action Banner" onclick="openLightbox(this.src)" />
+    <img src="header-banner.png" alt="Newson Sportec Motocross Action Banner" onclick="openLightbox(this.src)" />
 
-    <h1>Motocross Energy. Newson Sportec Style.</h1>
+    <h1>Newson Sportec Motocross Action</h1>
 
     <p class="intro">
-      Newson Sportec creates bold motorsport-inspired visuals, wheel parts concepts,
-      and performance designs for riders who love speed, power, dirt racing culture,
-      and modern bike style.
+      Feel the power, speed, dirt, and racing energy of Newson Sportec.
+      This page presents bold motocross visuals with black and neon green racing style.
     </p>
 
     <div class="buttons">
       <a href="https://newsonsportec.wixsite.com/wheelparts" target="_blank">Explore Wheel Parts</a>
-      <a href="#contact">Contact Newson Sportec</a>
+      <a href="#gallery">View Gallery</a>
     </div>
-
-    <p class="gallery-title">Click each image to view it larger</p>
   </section>
 
-  <section class="gallery" id="gallery">
+  <section id="gallery">
+    <h2 class="section-title">Motocross Gallery</h2>
+    <p class="small-note">Click each image to view it larger.</p>
 
-    <div class="card">
-      <img src="sky-angle.png" alt="Newson Sportec motocross sky angle" onclick="openLightbox(this.src)" />
-      <h2>Sky Angle</h2>
-      <p>High-speed dirt racing from above.</p>
+    <div class="gallery">
+
+      <div class="card">
+        <img src="image-left.png" alt="Newson Sportec motocross rear angle" onclick="openLightbox(this.src)" />
+        <h2>Rear Angle</h2>
+        <p>
+          A powerful dirt-bike scene showing speed, dust, and strong racing movement.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="image-middle.png" alt="Newson Sportec motocross sky angle" onclick="openLightbox(this.src)" />
+        <h2>Sky Angle</h2>
+        <p>
+          A high-angle motocross view with exciting trail action and racing power.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="image-right.png" alt="Newson Sportec motocross front angle" onclick="openLightbox(this.src)" />
+        <h2>Front Angle</h2>
+        <p>
+          A close-up action shot with dirt, motion, and Newson Sportec performance style.
+        </p>
+      </div>
+
     </div>
-
-    <div class="card">
-      <img src="front-angle.png" alt="Newson Sportec motocross front angle" onclick="openLightbox(this.src)" />
-      <h2>Front Angle</h2>
-      <p>Power, focus, and performance on the trail.</p>
-    </div>
-
-    <div class="card">
-      <img src="rear-angle.png" alt="Newson Sportec motocross rear angle" onclick="openLightbox(this.src)" />
-      <h2>Rear Angle</h2>
-      <p>Dust, speed, and strong racing energy.</p>
-    </div>
-
   </section>
 
   <div class="note">
     <strong>Rider Safety Note:</strong>
-    All riding visuals are for creative promotional design. Always ride safely,
+    These motocross images are creative promotional visuals. Always ride safely,
     follow local riding rules, and wear proper protective gear.
   </div>
 
   <footer id="contact">
-    <h3>Newson Sportec — Ride. Build. Perform.</h3>
+    <h3>Newson Sportec</h3>
 
     <p>
-      Copyright Notice: © 2026 Newson Sportec. All rights reserved.
-      Images, logos, designs, and brand materials on this page are for Newson Sportec
-      promotional and portfolio use only. Do not copy, reuse, sell, or redistribute
-      without permission.
+      Power. Speed. Performance. Newson Sportec creates motorsport-inspired visuals,
+      wheel parts concepts, and racing-style designs.
     </p>
 
-    <div class="social" id="social">
-      <h3>Follow Newson Sportec</h3>
+    <div class="social">
       <a href="https://www.facebook.com/Newsonsportecnews/" target="_blank">Facebook</a>
       <a href="https://www.instagram.com/newsonsportec/" target="_blank">Instagram</a>
       <a href="https://www.linkedin.com/company/111531327/admin/dashboard/" target="_blank">LinkedIn</a>
+      <a href="https://www.youtube.com/NEWSONSPORTEC" target="_blank">YouTube</a>
     </div>
+
+    <p>
+      © 2026 Newson Sportec. All rights reserved.
+    </p>
   </footer>
 
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <span class="close">&times;</span>
-    <img id="lightbox-img" src="" alt="Large preview" />
+    <img id="lightbox-img" src="" alt="Large image preview" />
   </div>
 
   <script>
@@ -345,4 +386,3 @@
 
 </body>
 </html>
-    

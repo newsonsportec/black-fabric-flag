@@ -124,13 +124,19 @@
       box-shadow: 0 0 28px rgba(156, 255, 0, 0.15);
     }
 
+    /* IMPORTANT:
+       object-fit: contain shows the whole image.
+       It will not cut off the top, bottom, left, or right side.
+    */
     .card img {
       width: 100%;
-      height: 360px;
-      object-fit: cover;
+      height: 520px;
+      object-fit: contain;
+      background: #000;
       border-radius: 18px;
       cursor: pointer;
       transition: 0.3s ease;
+      display: block;
     }
 
     .card img:hover {
@@ -238,7 +244,7 @@
       }
 
       .card img {
-        height: 450px;
+        height: 650px;
       }
 
       h1 {
@@ -297,7 +303,7 @@
       }
 
       .card img {
-        height: 330px;
+        height: 430px;
       }
 
       .section-title {
@@ -441,4 +447,3 @@
 
 </body>
 </html>
-   

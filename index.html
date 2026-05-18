@@ -8,7 +8,7 @@
 
   <!-- Facebook / Social Media Preview Settings -->
   <meta property="og:title" content="Newson Sportec Motocross Action" />
-  <meta property="og:description" content="Power, speed, dust, and bold motocross energy. Watch the Newson Sportec motocross reel and explore the racing-style gallery." />
+  <meta property="og:description" content="Power, speed, dust, and bold motocross energy. Explore the Newson Sportec racing-style gallery with black and neon green performance visuals." />
   <meta property="og:image" content="https://newsonsportec.github.io/black-fabric-flag/header-banner.png" />
   <meta property="og:image:secure_url" content="https://newsonsportec.github.io/black-fabric-flag/header-banner.png" />
   <meta property="og:url" content="https://newsonsportec.github.io/black-fabric-flag/" />
@@ -17,7 +17,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Newson Sportec Motocross Action" />
-  <meta name="twitter:description" content="Power, speed, dust, and bold motocross energy. Watch the Newson Sportec motocross reel." />
+  <meta name="twitter:description" content="Power, speed, dust, and bold motocross energy. Explore the Newson Sportec racing-style gallery." />
   <meta name="twitter:image" content="https://newsonsportec.github.io/black-fabric-flag/header-banner.png" />
 
   <style>
@@ -107,6 +107,45 @@
       transform: translateY(-3px);
     }
 
+    /* Auto-playing reel section */
+    .reel-section {
+      max-width: 1200px;
+      margin: 35px auto 60px;
+      padding: 24px;
+      background: #101010;
+      border: 2px solid rgba(156, 255, 0, 0.45);
+      border-radius: 28px;
+      box-shadow: 0 0 35px rgba(156, 255, 0, 0.18);
+    }
+
+    .reel-title {
+      color: #9cff00;
+      font-size: 56px;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .reel-text {
+      color: #dddddd;
+      font-size: 30px;
+      line-height: 1.5;
+      margin: 0 auto 24px;
+      max-width: 1000px;
+    }
+
+    .reel-video {
+      width: 100%;
+      max-width: 1050px;
+      height: auto;
+      border-radius: 22px;
+      border: 2px solid rgba(156, 255, 0, 0.45);
+      box-shadow: 0 0 35px rgba(156, 255, 0, 0.35);
+      display: block;
+      margin: 0 auto;
+      background: #000;
+    }
+
     .section-title {
       color: #9cff00;
       font-size: 60px;
@@ -119,42 +158,6 @@
       color: #cccccc;
       font-size: 34px;
       margin-bottom: 35px;
-    }
-
-    /* New video reel section */
-    .reel-section {
-      max-width: 1200px;
-      margin: 30px auto 60px;
-      padding: 30px;
-      background: linear-gradient(135deg, #070707, #151515);
-      border: 2px solid rgba(156, 255, 0, 0.4);
-      border-radius: 28px;
-      box-shadow: 0 0 35px rgba(156, 255, 0, 0.18);
-    }
-
-    .reel-section h2 {
-      color: #9cff00;
-      font-size: 56px;
-      margin: 0 0 18px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .reel-section p {
-      color: #dddddd;
-      font-size: 30px;
-      line-height: 1.5;
-      max-width: 1000px;
-      margin: 0 auto 28px;
-    }
-
-    .reel-video {
-      width: 100%;
-      max-width: 950px;
-      border-radius: 22px;
-      border: 2px solid rgba(156, 255, 0, 0.5);
-      box-shadow: 0 0 30px rgba(156, 255, 0, 0.35);
-      background: #000;
     }
 
     .gallery {
@@ -283,15 +286,6 @@
         margin: 0 12px;
       }
 
-      .gallery {
-        grid-template-columns: 1fr;
-        max-width: 900px;
-      }
-
-      .card img {
-        height: 650px;
-      }
-
       h1 {
         font-size: 52px;
       }
@@ -304,12 +298,26 @@
         font-size: 28px;
       }
 
-      .reel-section h2 {
+      .reel-section {
+        max-width: 900px;
+        margin: 30px 20px 50px;
+      }
+
+      .reel-title {
         font-size: 44px;
       }
 
-      .reel-section p {
+      .reel-text {
         font-size: 26px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        max-width: 900px;
+      }
+
+      .card img {
+        height: 650px;
       }
 
       .card h2 {
@@ -350,16 +358,21 @@
       }
 
       .reel-section {
-        padding: 18px;
-        margin: 25px 15px 45px;
+        margin: 25px 15px 40px;
+        padding: 16px;
+        border-radius: 20px;
       }
 
-      .reel-section h2 {
+      .reel-title {
         font-size: 30px;
       }
 
-      .reel-section p {
+      .reel-text {
         font-size: 19px;
+      }
+
+      .reel-video {
+        border-radius: 16px;
       }
 
       .gallery {
@@ -431,23 +444,26 @@
     </p>
 
     <div class="buttons">
-      <a href="#reel">Watch Reel</a>
       <a href="https://newsonsportec.wixsite.com/wheelparts" target="_blank">Explore Wheel Parts</a>
-      <a href="#gallery">View Gallery</a>
+      <a href="#reel">Watch Reel</a>
     </div>
   </section>
 
-  <!-- Best place for your uploaded reel -->
+  <!-- Auto-playing reel placed before the gallery -->
   <section class="reel-section" id="reel">
-    <h2>Newson Sportec Racing Reel</h2>
+    <h2 class="reel-title">Motocross Action Reel</h2>
 
-    <p>
-      Watch the motocross energy come alive with speed, dust, movement,
-      and Newson Sportec performance style.
+    <p class="reel-text">
+      Watch the dust, speed, and racing energy of Newson Sportec in motion.
     </p>
 
-    <video class="reel-video" controls playsinline poster="header-banner.png">
-      <source src="newson-sportec-reel.mp4" type="video/mp4">
+    <video
+      class="reel-video"
+      src="newson-sportec-reel.mp4"
+      autoplay
+      muted
+      loop
+      playsinline>
       Your browser does not support the video tag.
     </video>
   </section>

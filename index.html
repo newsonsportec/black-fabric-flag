@@ -8,17 +8,16 @@
 
   <!-- Facebook / Social Media Preview Settings -->
   <meta property="og:title" content="Newson Sportec Motocross Action" />
-  <meta property="og:description" content="Power, speed, dust, and bold motocross energy. Explore the Newson Sportec racing-style gallery with black and neon green performance visuals." />
+  <meta property="og:description" content="Power, speed, dust, and bold motocross energy. Watch the Newson Sportec motocross reel and explore the racing-style gallery." />
   <meta property="og:image" content="https://newsonsportec.github.io/black-fabric-flag/header-banner.png" />
   <meta property="og:image:secure_url" content="https://newsonsportec.github.io/black-fabric-flag/header-banner.png" />
   <meta property="og:url" content="https://newsonsportec.github.io/black-fabric-flag/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Newson Sportec" />
 
-  <!-- Optional: helps other platforms also show a nice preview -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Newson Sportec Motocross Action" />
-  <meta name="twitter:description" content="Power, speed, dust, and bold motocross energy. Explore the Newson Sportec racing-style gallery." />
+  <meta name="twitter:description" content="Power, speed, dust, and bold motocross energy. Watch the Newson Sportec motocross reel." />
   <meta name="twitter:image" content="https://newsonsportec.github.io/black-fabric-flag/header-banner.png" />
 
   <style>
@@ -120,6 +119,42 @@
       color: #cccccc;
       font-size: 34px;
       margin-bottom: 35px;
+    }
+
+    /* New video reel section */
+    .reel-section {
+      max-width: 1200px;
+      margin: 30px auto 60px;
+      padding: 30px;
+      background: linear-gradient(135deg, #070707, #151515);
+      border: 2px solid rgba(156, 255, 0, 0.4);
+      border-radius: 28px;
+      box-shadow: 0 0 35px rgba(156, 255, 0, 0.18);
+    }
+
+    .reel-section h2 {
+      color: #9cff00;
+      font-size: 56px;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .reel-section p {
+      color: #dddddd;
+      font-size: 30px;
+      line-height: 1.5;
+      max-width: 1000px;
+      margin: 0 auto 28px;
+    }
+
+    .reel-video {
+      width: 100%;
+      max-width: 950px;
+      border-radius: 22px;
+      border: 2px solid rgba(156, 255, 0, 0.5);
+      box-shadow: 0 0 30px rgba(156, 255, 0, 0.35);
+      background: #000;
     }
 
     .gallery {
@@ -269,6 +304,14 @@
         font-size: 28px;
       }
 
+      .reel-section h2 {
+        font-size: 44px;
+      }
+
+      .reel-section p {
+        font-size: 26px;
+      }
+
       .card h2 {
         font-size: 42px;
       }
@@ -304,6 +347,19 @@
       .buttons a {
         font-size: 22px;
         padding: 16px 28px;
+      }
+
+      .reel-section {
+        padding: 18px;
+        margin: 25px 15px 45px;
+      }
+
+      .reel-section h2 {
+        font-size: 30px;
+      }
+
+      .reel-section p {
+        font-size: 19px;
       }
 
       .gallery {
@@ -357,6 +413,7 @@
   <header>
     <nav>
       <a href="#home">HOME</a>
+      <a href="#reel">REEL</a>
       <a href="#gallery">GALLERY</a>
       <a href="https://newsonsportec.wixsite.com/wheelparts" target="_blank">WHEEL PARTS</a>
       <a href="#contact">CONTACT</a>
@@ -374,9 +431,25 @@
     </p>
 
     <div class="buttons">
+      <a href="#reel">Watch Reel</a>
       <a href="https://newsonsportec.wixsite.com/wheelparts" target="_blank">Explore Wheel Parts</a>
       <a href="#gallery">View Gallery</a>
     </div>
+  </section>
+
+  <!-- Best place for your uploaded reel -->
+  <section class="reel-section" id="reel">
+    <h2>Newson Sportec Racing Reel</h2>
+
+    <p>
+      Watch the motocross energy come alive with speed, dust, movement,
+      and Newson Sportec performance style.
+    </p>
+
+    <video class="reel-video" controls playsinline poster="header-banner.png">
+      <source src="newson-sportec-reel.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </section>
 
   <section id="gallery">
